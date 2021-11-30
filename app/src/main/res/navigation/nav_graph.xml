@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.BasicNavigation.Fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentSubscriptions"
+            app:destination="@id/fragmentSubscriptions" />
+        <argument
+            android:name="channelName"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSubscriptions"
+        tools:layout="@layout/fragment_subscriptions"
+        android:name="com.example.basicnavigation.Fragments.FragmentSubscriptions"
+        android:label="FragmentSubscriptions" >
+        <action
+            android:id="@+id/action_fragmentSubscriptions_to_fragmentNotifications"
+            app:destination="@id/fragmentNotifications" />
+        <argument
+            android:name="channelName"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentNotifications"
+        tools:layout="@layout/fragment_notifications"
+        android:name="com.example.basicnavigation.Fragments.FragmentNotifications"
+        android:label="FragmentNotifications">
+
+        <argument
+            android:name="channelName"
+            app:argType="string"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentGame"
+        android:name="com.example.basicnavigation.Fragments.FragmentDashboard"
+        android:label="FragmentDashboard" />
+</navigation>
